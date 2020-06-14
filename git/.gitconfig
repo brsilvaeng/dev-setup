@@ -1,0 +1,12 @@
+[alias]
+  lg = log --abbrev-commit --graph --pretty=format:'%C(yellow)%h %C(reset)%s %Cgreen(%cr) %C(bold blue)<%an>%C(auto)%d'
+  ft = fetch --all --prune --tags
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  df = diff
+  ac = !git add -A && git commit -m
+
+[credential]
+  helper = cache
