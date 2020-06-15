@@ -7,6 +7,3 @@
   br = branch
   df = diff
   ac = !git add -A && git commit -m
-
-[credential]
-  helper = cache
