@@ -21,6 +21,5 @@ echo "Copied setup file: .gitconfig"
 
 git config --global user.name "$NAME"
 git config --global user.email "$EMAIL"
-
-echo "https://$USER:$PASS@github.com" > "$HOME/.git-credentials"
+git config --global credential.helper store
 
