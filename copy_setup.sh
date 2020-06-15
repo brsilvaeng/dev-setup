@@ -1,7 +1,7 @@
 #!/bin/bash
 
-readonly SCRIPT_NAME="$(basename $0)"
-readonly SETUP="$(dirname "$(realpath $0)")"
+readonly SCRIPT_NAME=$(basename "$0")
+readonly SETUP=$(dirname "$(realpath "$0")")
 readonly HOME="$(realpath ~)"
 
 function error {
@@ -9,7 +9,7 @@ function error {
   MSG="$1"
   ERR="$2"
   echo "$SCRIPT_NAME Error[$ERR]: $MSG"
-  exit $ERR
+  exit "$ERR"
 }
 
 [ $# -gt 0 ]  || error "file name missing" "1" 
@@ -18,7 +18,7 @@ function error {
 
 FILE="$1"
 HOME_FILE="$HOME/$FILE"
-SETUP_FILE="$(find $SETUP -name $FILE)"
+SETUP_FILE=$(find "$SETUP" -name "$FILE")
 
 rm "$HOME_FILE" 2> /dev/null || error "cannot remove $HOME_FILE" "4"
 
