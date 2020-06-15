@@ -16,10 +16,11 @@ read -r USER
 echo -n "GitHub password: "
 read -r PASS
 
-$SETUP/../copy_setup.sh ".gitconfig" || exit 1
+"$SETUP"/../copy_setup.sh .gitconfig || exit 1
 echo "Copied setup file: .gitconfig"
 
 git config --global user.name "$NAME"
 git config --global user.email "$EMAIL"
-git config --global credential.helper store
+#git config --global credential.helper store
+echo "https://$USER:$PASS@github.com" > "$HOME"/.git-credentials
 
